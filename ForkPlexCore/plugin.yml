@@ -1,0 +1,9 @@
+name: ForkPlexCore
+version: 0.0
+author: Andrew121410
+main: ForkPlexCore.ForkPlexCore.ForkPlexCore.Main
+commands:
+    server:
+    bungee:
+    fly:
+    gm:
