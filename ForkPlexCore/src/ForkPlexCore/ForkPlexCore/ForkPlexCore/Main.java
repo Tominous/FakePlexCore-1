@@ -17,18 +17,23 @@ import Events.OnHealthChange;
 import Events.OnJoinTitle;
 import Events.OnWeatherChange;
 import Translate.Translate;
+import Utils.CustomYmlManger;
+import Utils.Metrics;
 
 public class Main extends JavaPlugin implements Listener {
 
     public static Main instance;
     public static Main plugin;
+    private CustomYmlManger customyml;
     
 	@Override
 	public void onEnable() {
 		plugin = this;
+		YmlConfigGen();
 		FileConfigGen();
 		eventsEnable();
 		commandsEnable();
+		bstats();
 		getLogger().info("[FakePlexCore] is now loaded!");
 	}
 	public void onDisable() {
@@ -52,6 +57,13 @@ public class Main extends JavaPlugin implements Listener {
 	public void FileConfigGen() {
 		getConfig().options().copyDefaults(true);
 		saveConfig();
+	}
+	public void YmlConfigGen() {
+		customyml = new CustomYmlManger();
+		//YML GOES BELOW ME
+	}
+	public void bstats() {
+		Metrics metrics = new Metrics(this);
 	}
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		  {
