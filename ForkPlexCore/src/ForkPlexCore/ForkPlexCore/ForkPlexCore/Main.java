@@ -6,8 +6,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import Commands.bungee;
+import Commands.defaultmineplex;
 import Commands.fly;
 import Commands.gm;
+import Commands.setspawn;
+import Commands.spawn;
 import Events.DoubleJump;
 import Events.IfFallInVoid;
 import Events.LoadingStats;
@@ -43,6 +46,9 @@ public class Main extends JavaPlugin implements Listener {
 		new bungee(this);
 		new fly(this);	
 		new gm(this);
+		new defaultmineplex(this);
+		new spawn(customyml, this);
+		new setspawn(customyml, this);
 	}
 	public void eventsEnable() {
 		new LoadingStats(this);
@@ -51,8 +57,8 @@ public class Main extends JavaPlugin implements Listener {
 		new DoubleJump(this);
 		new OnWeatherChange(this);
 		new OnHealthChange(this);
-		new IfFallInVoid(this);
 		new OnJoinTitle(this);
+		new IfFallInVoid(customyml, plugin);
 	}
 	public void FileConfigGen() {
 		getConfig().options().copyDefaults(true);
@@ -61,6 +67,9 @@ public class Main extends JavaPlugin implements Listener {
 	public void YmlConfigGen() {
 		customyml = new CustomYmlManger();
 		//YML GOES BELOW ME
+		customyml.setupshit();
+		customyml.saveshit();
+		customyml.reloadshit();
 	}
 	public void bstats() {
 		Metrics metrics = new Metrics(this);

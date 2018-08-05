@@ -5,15 +5,18 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.Plugin;
 
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import ForkPlexCore.ForkPlexCore.ForkPlexCore.Main;
 import Translate.Translate;
+import Utils.API;
 
 public class OnJoinTitle implements Listener{
 	
-	private ForkPlexCore.ForkPlexCore.ForkPlexCore.Main plugin;
+	private static Plugin plugin = Main.plugin;
+	API api = new API();
 	
 	public OnJoinTitle(ForkPlexCore.ForkPlexCore.ForkPlexCore.Main plugin) {
 	this.plugin = plugin;
@@ -25,8 +28,8 @@ public class OnJoinTitle implements Listener{
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		TitleAPI.sendTitle(e.getPlayer(), 10, 5 * 20, 10, Translate.chat(config.getString("titlename")), Translate.chat(config.getString("titlesubtitle")));
+		TitleAPI.sendTitle(e.getPlayer(), 10, 5 * 20, 10, Translate.chat(config.getString("Title")), Translate.chat(config.getString("TitleSubtittle")));
 		//TabList UNDER
-		TitleAPI.sendTabTitle(e.getPlayer(), Translate.chat(config.getString("tablisttop")), Translate.chat(config.getString("tablistbottom")));
+		TitleAPI.sendTabTitle(e.getPlayer(), Translate.chat(config.getString("TablistTOP")), Translate.chat(config.getString("TablistBOTTOM")));
 	}
 }

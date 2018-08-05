@@ -1,9 +1,5 @@
-xfallinvoid: 10
-yfallinvoid: 10
-zfallinvoid: 10
+Title: ''
+TitleSubtittle: 'example'
 
-titlename: 'example'
-titlesubtitle: 'example'
-
-tablisttop: 'example'
-tablistbottom: 'example'
+TablistTOP: 'example'
+TablistBOTTOM: 'example'

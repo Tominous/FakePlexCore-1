@@ -13,14 +13,17 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
+
+import ForkPlexCore.ForkPlexCore.ForkPlexCore.Main;
 
 public class DoubleJump implements Listener{
 	
-	private ForkPlexCore.ForkPlexCore.ForkPlexCore.Main plugin;
+	private static Plugin plugin = Main.plugin;
 	
 	public DoubleJump(ForkPlexCore.ForkPlexCore.ForkPlexCore.Main plugin) {
-	this.plugin = plugin;
+		this.plugin = plugin;
 	
 	Bukkit.getPluginManager().registerEvents(this, plugin);
 	}
