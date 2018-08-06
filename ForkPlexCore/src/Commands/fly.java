@@ -39,7 +39,7 @@ public class fly implements CommandExecutor {
                   p.sendMessage(Translate.chat("Flying Disabled."));
                 return true;
 		} else {
-			p.sendMessage(Translate.chat("You don't have permission to use this command."));
+			api.PermissionErrorMessage(p);
 		}
 		}
 		return true;

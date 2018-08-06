@@ -40,7 +40,7 @@ public class gm implements CommandExecutor {
 					p.sendMessage(Translate.chat("&9Game Mode>&7 Creative Mode: &cFalse"));
 				}
 		} else {
-			p.sendMessage(Translate.chat("You don't have permission to use this command."));
+			api.PermissionErrorMessage(p);
 		}
 		return true;
 	}

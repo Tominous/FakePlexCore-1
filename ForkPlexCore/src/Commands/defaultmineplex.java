@@ -33,14 +33,15 @@ public class defaultmineplex implements CommandExecutor {
 		
 		if (p.hasPermission("fakeplex.defaultmineplex.command")){
 			p.sendMessage(Translate.chat("&aThis plugin is setting the default mineplex shit."));
-			file.set("Title", "");
-			file.set("TittleSubtittle", "");
+			file.set("TitleTOP", "&6&lFORKPLEX");
+			file.set("TittleBOTTOM", "&9Made by andrew121410");
 			file.set("TablistTOP", "&f&lMineplex Network&r     &aLobby-1");
 			file.set("TablistBOTTOM", "Visit &awww.mineplex.com&r for News, Forums and Shop");
 			Main.plugin.saveConfig();
+			Main.plugin.reloadConfig();
 			return true;
 		} else {
-			p.sendMessage(Translate.chat("You don't have permission to use this command."));
+			api.PermissionErrorMessage(p);
 		}
 		return true;
 	}

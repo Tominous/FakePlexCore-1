@@ -18,9 +18,11 @@ public class OnHealthChange implements Listener{
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
-	public void onDamage (EntityDamageEvent event) {
-		Player p = (Player) event.getEntity();
-		
-		event.setCancelled(true);
+	public void onDamage (EntityDamageEvent e) {
+		if(!(e.getEntity() instanceof Player)) {
+			return;
+		}
+		Player p = (Player) e.getEntity();
+		e.setCancelled(true);
 	}
 }

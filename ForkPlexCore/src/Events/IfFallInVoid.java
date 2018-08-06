@@ -30,9 +30,10 @@ public class IfFallInVoid implements Listener{
 	
 	@EventHandler
 	public void onPlayerMove (PlayerMoveEvent  e) {
-		//Player p = event.getPlayer();
+		if(!(e.getPlayer() instanceof Player)) {
+			return;
+		}
 		Player p = (Player) e.getPlayer();
-		if(e.getPlayer() instanceof Player) {
 	      double x = configinstance.getshit().getInt("Spawn.Data.X");
 	      double y = configinstance.getshit().getInt("Spawn.Data.Y");
 	      double z = configinstance.getshit().getInt("Spawn.Data.Z");
@@ -46,7 +47,6 @@ public class IfFallInVoid implements Listener{
 		if (loc.getBlockY() <=0) {
 			p.teleport(spawn);
 			p.sendMessage(Translate.chat("&4I got you fam"));
-		}
 		}
 	}
 }

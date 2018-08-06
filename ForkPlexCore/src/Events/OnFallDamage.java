@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
+import Utils.API;
+
 public class OnFallDamage implements Listener{
 	
 	private ForkPlexCore.ForkPlexCore.ForkPlexCore.Main plugin;
@@ -19,10 +21,13 @@ public class OnFallDamage implements Listener{
 	
     @EventHandler
     public void onPlayerFall(EntityDamageEvent e) {
-        Player player = (Player) e.getEntity();
+		if(!(e.getEntity() instanceof Player)) {
+			return;
+		}
+		Player p = (Player) e.getEntity();
         if (e.getCause() == DamageCause.FALL){
         	e.setCancelled(true);
-                player.setFallDistance(0);
+                p.setFallDistance(0);
                 return;
         }
     }

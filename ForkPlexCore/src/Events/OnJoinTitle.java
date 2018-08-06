@@ -28,7 +28,7 @@ public class OnJoinTitle implements Listener{
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		TitleAPI.sendTitle(e.getPlayer(), 10, 5 * 20, 10, Translate.chat(config.getString("Title")), Translate.chat(config.getString("TitleSubtittle")));
+		TitleAPI.sendTitle(e.getPlayer(), 10, 5 * 20, 10, Translate.chat(config.getString("TitleTOP")), Translate.chat(config.getString("TittleBOTTOM")));
 		//TabList UNDER
 		TitleAPI.sendTabTitle(e.getPlayer(), Translate.chat(config.getString("TablistTOP")), Translate.chat(config.getString("TablistBOTTOM")));
 	}
