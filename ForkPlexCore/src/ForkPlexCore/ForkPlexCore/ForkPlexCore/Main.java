@@ -11,9 +11,9 @@ import Commands.fly;
 import Commands.gm;
 import Commands.setspawn;
 import Commands.spawn;
-import Events.DoubleJump;
 import Events.IfFallInVoid;
 import Events.LoadingStats;
+import Events.NewDoubleJump;
 import Events.OnFallDamage;
 import Events.OnFoodChange;
 import Events.OnHealthChange;
@@ -54,11 +54,12 @@ public class Main extends JavaPlugin implements Listener {
 		new LoadingStats(this);
 		new OnFoodChange(this);
 		new OnFallDamage(this);
-		new DoubleJump(this);
+		//new DoubleJump(this); OLD ONE
 		new OnWeatherChange(this);
 		new OnHealthChange(this);
 		new OnJoinTitle(this);
 		new IfFallInVoid(customyml, plugin);
+		new NewDoubleJump(this);
 	}
 	public void FileConfigGen() {
 		getConfig().options().copyDefaults(true);
